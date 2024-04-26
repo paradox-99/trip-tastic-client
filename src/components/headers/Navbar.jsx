@@ -39,7 +39,7 @@ const Navbar = () => {
                     <FaYoutube />
                 </div>
             </div>
-            <div className="navbar px-4 xl:px-28 py-3  font-montserrat z-10">
+            <div className="navbar px-4 xl:px-28 py-3  font-montserrat z-10 sticky top-0">
                 <div className="dropdown dropdown-start navbar-start lg:hidden">
                     <div tabIndex={0} role="button" className="btn btn-ghost pl-1 lg:hidden text-2xl">
                         <HiMenuAlt2 />
@@ -56,7 +56,7 @@ const Navbar = () => {
                 <NavLink to={'/'} className="navbar-center md:ml-20"><img src={titleLogo} alt="" className="w-[150px] md:w-[200px]" /></NavLink>
                 <div className="navbar-end">
                     {
-                        user && <img src={""} alt="" className="hidden lg:flex mr-1 md:mr-3 w-12 h-12 rounded-full" data-tooltip-id="my-tooltip" data-tooltip-content={"Nayeem"} />
+                        user && <img src={""} alt="" className="hidden lg:flex mr-1 md:mr-3 w-12 h-12 rounded-full" data-tooltip-id="my-tooltip" data-tooltip-content={user.displayName} />
                     }
                     {
                         user && <NavLink onClick={logout} className="btn bg-inherit border-none shadow-none hover:bg-[#16DB65] text-lg">Sign out</NavLink>
@@ -82,7 +82,7 @@ const Navbar = () => {
                     </div>
                 </div>
             </div>
-            <Tooltip id="my-tooltip" style={{ backgroundColor: "#64F790", color: "black" }} />
+            <Tooltip id="my-tooltip" style={{ backgroundColor: "#058C42", color: "white" }} />
         </div>
     );
 };

@@ -3,6 +3,9 @@ import Root from "./Root";
 import Home from "./components/pages/home/Home";
 import Signin from "./components/pages/login/Signin";
 import SignUp from "./components/pages/signup/SignUp";
+import AllSpots from "./components/pages/allspots/AllSpots";
+import AddSpots from "./components/pages/addSpots/AddSpots";
+import MyList from "./components/pages/myList/MyList";
 
 const Routes = createBrowserRouter([
   {
@@ -15,15 +18,15 @@ const Routes = createBrowserRouter([
       },
       {
         path: "/all-spots",
-        element: <Home></Home>,
+        element: <AllSpots></AllSpots>,
       },
       {
         path: "/add-spot",
-        element: <Home></Home>,
+        element: <AddSpots></AddSpots>,
       },
       {
         path: "/my-list",
-        element: <Home></Home>,
+        element: <MyList></MyList>,
       },
       {
         path: '/sign-in',

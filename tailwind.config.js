@@ -17,6 +17,9 @@ export default {
         'textGreen': '#23BE0A',
         'btnPrimary': '#0CD452',
         'btnHover': '#23FF70'
+      },
+      backgroundImage: {
+        'form_bg': "url('src/assets/images/form.png')"
       }
     },
   },
