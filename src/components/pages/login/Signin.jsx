@@ -110,8 +110,8 @@ const Signin = () => {
                             <div className="space-y-2">
                                 <label>Password</label><br />
                                 <div className="flex bg-white items-center">
-                                    <input {...register('password')} type={showPassword ? "text" : "password"} className="grow md:text-lg lg:text-xl  p-2 w-full focus:outline-none focus:border-b-[3px] border-[#058C42]" placeholder="Password" />
-                                    <span className="text-xl">{showPassword ? <IoEyeOffSharp onClick={() => setShowPassword(!showPassword)} /> : <IoEyeSharp onClick={() => setShowPassword(!showPassword)} />}</span>
+                                    <input {...register('password')} type={showPassword ? "text" : "password"} className="md:text-lg lg:text-xl  p-2 w-full focus:outline-none focus:border-b-[3px] border-[#058C42]" placeholder="Password" />
+                                    <span className="text-xl pr-1">{showPassword ? <IoEyeOffSharp onClick={() => setShowPassword(!showPassword)} /> : <IoEyeSharp onClick={() => setShowPassword(!showPassword)} />}</span>
                                 </div>
                             </div>
 

@@ -1,8 +1,5 @@
 import { Helmet } from "react-helmet-async";
-import { MdEmail } from "react-icons/md";
-import { FaKey } from "react-icons/fa6";
 import { IoEyeOffSharp, IoEyeSharp, IoWarningOutline } from "react-icons/io5";
-import { FaEdit, FaLink } from "react-icons/fa";
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
@@ -113,14 +110,16 @@ const SignUp = () => {
                             </div>
                             {errors.email && (<p className="text-red-500">{errors.email.message}</p>)}
 
-                            {/* Submit button */}
+                            {/* password */}
                             <div className="flex flex-col gap-2">
                                 <label className="md:text-lg lg:text-xl">Password</label>
-                                <input {...register('password')} type={showPassword ? "text" : "password"} className="md:text-lg lg:text-xl p-2 w-full focus:outline-none focus:border-b-[3px] border-[#058C42]" placeholder="Password" />
+                                <div className="flex items-center bg-white">
+                                    <input {...register('password')} type={showPassword ? "text" : "password"} className="md:text-lg lg:text-xl p-2 w-full focus:outline-none focus:border-b-[3px] border-[#058C42]" placeholder="Password" />
+                                    <span className="text-xl pr-1">{showPassword ? <IoEyeOffSharp onClick={() => setShowPassword(!showPassword)} /> : <IoEyeSharp onClick={() => setShowPassword(!showPassword)} />}</span>
+                                </div>
+                                {errors.password && (<p className="text-red-500">{errors.password.message}</p>)}
 
-                                <span className="text-xl">{showPassword ? <IoEyeOffSharp onClick={() => setShowPassword(!showPassword)} /> : <IoEyeSharp onClick={() => setShowPassword(!showPassword)} />}</span>
                             </div>
-                            {errors.password && (<p className="text-red-500">{errors.password.message}</p>)}
 
                             {
                                 error && (<div className="flex justify-center items-center gap-1 text-red-500"><IoWarningOutline /><p className="text-lg">{error}</p></div>)

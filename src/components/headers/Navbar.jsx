@@ -10,7 +10,7 @@ import { IoLogInOutline } from "react-icons/io5";
 
 const Navbar = () => {
 
-    const { user, logout } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
 
     const routes = <>
         <li><NavLink to={'/'}>Home</NavLink></li>
@@ -39,7 +39,7 @@ const Navbar = () => {
                     <FaYoutube />
                 </div>
             </div>
-            <div className="navbar px-4 xl:px-28 py-3  font-montserrat z-10 sticky top-0">
+            <div className="navbar px-2 md:px-4 xl:px-28 py-3  font-montserrat z-10 sticky top-0">
                 <div className="dropdown dropdown-start navbar-start lg:hidden">
                     <div tabIndex={0} role="button" className="btn btn-ghost pl-1 lg:hidden text-2xl">
                         <HiMenuAlt2 />
@@ -59,7 +59,7 @@ const Navbar = () => {
                         user && <img src={""} alt="" className="hidden lg:flex mr-1 md:mr-3 w-12 h-12 rounded-full" data-tooltip-id="my-tooltip" data-tooltip-content={user.displayName} />
                     }
                     {
-                        user && <NavLink onClick={logout} className="btn bg-inherit border-none shadow-none hover:bg-[#16DB65] text-lg">Sign out</NavLink>
+                        user && <button onClick={logOut} className="btn bg-inherit border-none shadow-none hover:bg-[#16DB65] text-lg">Sign out</button>
                     }
                     {
                         !user && <NavLink to={'/sign-in'} className="btn bg-inherit border-none shadow-none hover:bg-[#16DB65] lg:font-semibold xl:font-medium xl:text-lg hidden lg:flex">Sign in</NavLink>
@@ -82,7 +82,7 @@ const Navbar = () => {
                     </div>
                 </div>
             </div>
-            <Tooltip id="my-tooltip" style={{ backgroundColor: "#058C42", color: "white" }} />
+            <Tooltip id="my-tooltip" style={{ backgroundColor: "#0D2818", color: "white" }} />
         </div>
     );
 };

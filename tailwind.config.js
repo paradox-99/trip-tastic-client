@@ -19,7 +19,8 @@ export default {
         'btnHover': '#23FF70'
       },
       backgroundImage: {
-        'form_bg': "url('src/assets/images/form.png')"
+        'form_bg': "url('src/assets/images/form.png')",
+        'add-spot': "url('src/assets/images/addSpot.png')"
       }
     },
   },
