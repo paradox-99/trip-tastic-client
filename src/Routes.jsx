@@ -14,6 +14,18 @@ const Routes = createBrowserRouter([
         element: <Home></Home>,
       },
       {
+        path: "/all-spots",
+        element: <Home></Home>,
+      },
+      {
+        path: "/add-spot",
+        element: <Home></Home>,
+      },
+      {
+        path: "/my-list",
+        element: <Home></Home>,
+      },
+      {
         path: '/sign-in',
         element: <Signin></Signin>
       },

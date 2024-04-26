@@ -3,7 +3,7 @@ import Navbar from './components/headers/Navbar';
 
 const Root = () => {
     return (
-        <div>
+        <div className='bg-[#D8FDE3]'>
             <Navbar></Navbar>
             <Outlet></Outlet>
         </div>
