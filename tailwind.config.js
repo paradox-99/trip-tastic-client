@@ -8,7 +8,8 @@ export default {
     extend: {
       fontFamily: {
         'montserrat': '"Montserrat", sans-serif',
-        'nunito': '"Nunito Sans", sans-serif'
+        'nunito': '"Nunito Sans", sans-serif',
+        'pacifico': '"Pacifico", cursive'
       },
       colors: {
         'heading': '#131313',
@@ -20,7 +21,8 @@ export default {
       },
       backgroundImage: {
         'form_bg': "url('src/assets/images/form.png')",
-        'add-spot': "url('src/assets/images/addSpot.png')"
+        'add-spot': "url('src/assets/images/addSpot.png')",
+        'cartImage': 'linear-gradient(to bottom,rgba(0,0,0,0) 0,rgba(0,0,0,0) 0,rgba(0,0,0,0.5) 50%,rgba(0,0,0,1) 100%)'
       }
     },
   },
