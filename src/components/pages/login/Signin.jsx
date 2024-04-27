@@ -34,8 +34,10 @@ const Signin = () => {
 
         handleEmailLogin(email, password)
             .then(res => {
-                if (res.user)
+                if (res.user) {
+                    handleUserInDatabase(res.user, "Email/password")
                     handleAlert();
+                }
                 navigate(location?.state ? location.state : '/')
             })
             .catch((error) => {
@@ -47,8 +49,10 @@ const Signin = () => {
     const googleLogin = () => {
         handleGoogleLogin()
             .then(res => {
-                if (res.user)
+                if (res.user){
+                    handleUserInDatabase(res.user, "Google")
                     handleAlert();
+                }
                 navigate(location?.state ? location.state : '/')
             })
             .catch((error) => { setError(error.message) });
@@ -57,8 +61,10 @@ const Signin = () => {
     const gitHubLogin = () => {
         handleGitHubLogin()
             .then(res => {
-                if (res.user)
+                if (res.user){
+                    handleUserInDatabase(res.user, "GitHub")
                     handleAlert();
+                }
                 navigate(location?.state ? location.state : '/')
             })
             .catch((error) => { setError(error.message) });
@@ -68,8 +74,10 @@ const Signin = () => {
         handleFacebookLogin()
             .then(res => {
                 console.log(res.user)
-                if (res.user)
+                if (res.user){
+                    handleUserInDatabase(res.user, "Facebook");
                     handleAlert();
+                }
                 navigate(location?.state ? location.state : '/')
             })
             .catch((error) => { setError(error.message) });
@@ -86,6 +94,54 @@ const Signin = () => {
     const handleAlert = async () => {
         await showSweetAlert();
     };
+
+    const handleUserInDatabase = (user, loginMethod) => {
+        fetch(`http://localhost:3000/findUser/${user.uid}`)
+            .then(result => result.json())
+            .then(datas => {
+                if (datas === false) {
+                    const userData = {
+                        uid: user.uid,
+                        email: user.email,
+                        name: user.displayName,
+                        photoURL: user.photoURL,
+                        emailVerified: user.emailVerified,
+                        phoneNumber: user.phoneNumber,
+                        isAnonymous: user.isAnonymous,
+                        creationTime: user.metadata.creationTime,
+                        lastSignInTime: user.metadata.lastSignInTime,
+                        loginMethod: loginMethod
+                    }
+                    fetch('http://localhost:3000/users', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(userData)
+                    })
+                        .then(result => result.json())
+                        .then(data => {
+                            console.log(data)
+                        })
+                }
+                else {
+                    const updateData = {
+                        lastSignInTime: user.metadata.lastSignInTime
+                    }
+                    fetch(`http://localhost:3000/updateUser/${user.uid}`, {
+                        method: 'PUT',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(updateData)
+                    })
+                        .then(result => result.json())
+                        .then(data => {
+                            console.log(data)
+                        })
+                }
+            })
+    }
 
     useEffect(() => {
         logOut();

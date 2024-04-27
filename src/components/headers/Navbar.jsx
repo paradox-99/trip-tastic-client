@@ -16,12 +16,14 @@ const Navbar = () => {
         <li><NavLink to={'/'}>Home</NavLink></li>
         <li><NavLink to={'/all-spots'}>Tourist Spots</NavLink></li>
         <li><NavLink to={'/add-spot'}>Add Spot</NavLink></li>
-        <li><NavLink to={'/my-list'}>My List</NavLink></li>
+        {
+            user && <li><NavLink to={'/my-list'}>My List</NavLink></li>
+        }
     </>
 
     return (
         <div>
-            <div className="bg-[#64F790] px-4 md:px-6 lg:px-10 py-2 lg:text-xl font-nunito flex justify-between text-paragraph">
+            <div className="bg-[#64F790] px-4 md:px-6 lg:px-10 py-1 lg:text-xl font-nunito flex justify-between text-paragraph">
                 <div className="flex gap-5 md:gap-10">
                     <div className="flex gap-2 items-center">
                         <TfiHeadphoneAlt />
@@ -39,7 +41,7 @@ const Navbar = () => {
                     <FaYoutube />
                 </div>
             </div>
-            <div className="navbar px-2 md:px-4 xl:px-28 py-3  font-montserrat z-10 sticky top-0">
+            <div className="navbar px-2 md:px-4 xl:px-28 font-montserrat z-10 sticky top-0">
                 <div className="dropdown dropdown-start navbar-start lg:hidden">
                     <div tabIndex={0} role="button" className="btn btn-ghost pl-1 lg:hidden text-2xl">
                         <HiMenuAlt2 />
@@ -56,7 +58,7 @@ const Navbar = () => {
                 <NavLink to={'/'} className="navbar-center md:ml-20"><img src={titleLogo} alt="" className="w-[150px] md:w-[200px]" /></NavLink>
                 <div className="navbar-end">
                     {
-                        user && <img src={""} alt="" className="hidden lg:flex mr-1 md:mr-3 w-12 h-12 rounded-full" data-tooltip-id="my-tooltip" data-tooltip-content={user.displayName} />
+                        user && <img src={user.photoURL} alt="" className="hidden lg:flex mr-1 md:mr-3 w-12 h-12 rounded-full" data-tooltip-id="my-tooltip" data-tooltip-content={user.displayName} />
                     }
                     {
                         user && <button onClick={logOut} className="btn bg-inherit border-none shadow-none hover:bg-[#16DB65] text-lg">Sign out</button>

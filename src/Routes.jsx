@@ -6,6 +6,7 @@ import SignUp from "./components/pages/signup/SignUp";
 import AllSpots from "./components/pages/allspots/AllSpots";
 import AddSpots from "./components/pages/addSpots/AddSpots";
 import MyList from "./components/pages/myList/MyList";
+import PrivateRoute from "./private/PrivateRoute";
 
 const Routes = createBrowserRouter([
   {
@@ -22,7 +23,7 @@ const Routes = createBrowserRouter([
       },
       {
         path: "/add-spot",
-        element: <AddSpots></AddSpots>,
+        element: <PrivateRoute><AddSpots></AddSpots></PrivateRoute>,
       },
       {
         path: "/my-list",
