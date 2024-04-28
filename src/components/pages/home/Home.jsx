@@ -76,52 +76,52 @@ const Home = () => {
             </div>
 
             {/* enjoy adventures travel */}
-            <div className='mt-[100px]'>
+            <div className='mt-10 md:mt-14 lg:mt-20 xl:mt-[100px]'>
                 <div>
-                    <h4 className='text-3xl font-pacifico font-semibold text-center text-heading mb-2'>Enjoy</h4>
-                    <h1 className='text-5xl font-montserrat font-extrabold text-center text-heading mb-8'>Adventures Travels</h1>
+                    <h4 className='text-xl md:text-2xl lg:text-3xl font-pacifico font-semibold text-center text-heading mb-2'>Enjoy</h4>
+                    <h1 className='text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-montserrat font-extrabold text-center text-heading mb-8'>Adventures Travels</h1>
                 </div>
-                <div className='flex flex-wrap justify-center gap-20'>
-                    <div className='flex flex-col text-center w-64'>
-                        <img src={forest} alt="" className='w-64 h-[250px] rounded-full' />
-                        <h3 className='text-2xl mt-10 mb-5 font-montserrat font-semibold text-heading'>Forest Travel</h3>
+                <div className='flex flex-wrap justify-center gap-10 md:gap-14 lg:gap-20 mx-3'>
+                    <div className='flex flex-col justify-center items-center text-center md:w-64'>
+                        <img src={forest} alt="" className='w-48 md:w-64 md:h-[250px] rounded-full' />
+                        <h3 className='text-2xl mt-3 md:mt-5 lg:mt-8 mb-2 md:mb-5 font-montserrat font-semibold text-heading'>Forest Travel</h3>
                         <p className='text-lg font-nunito text-paragraph'>Through dense woods, where sunlight filters through the canopy, forest travel unveils nature`s hidden treasures, inviting exploration and serenity.</p>
                         <div className='flex grow justify-center items-stretch w-full'>
-                            <button className='btn bg-black text-white font-montserrat text-xl self-end mt-4'>Enquire</button>
+                            <button className='btn bg-black text-white font-montserrat md:text-lg lg:text-xl self-end mt-4'>Enquire</button>
                         </div>
                     </div>
-                    <div className='flex flex-col text-center w-64'>
-                        <img src={climb} alt="" className='w-64 h-[250px] rounded-full' />
-                        <h3 className='text-2xl mt-10 mb-5 font-montserrat font-semibold text-heading'>Climbing</h3>
+                    <div className='flex flex-col justify-center items-center text-center md:w-64'>
+                        <img src={climb} alt="" className='w-48 h-48 md:w-64 md:h-[250px] rounded-full' />
+                        <h3 className='text-2xl mt-3 md:mt-5 lg:mt-8 mb-2 md:mb-5 font-montserrat font-semibold text-heading'>Climbing</h3>
                         <p className='text-lg font-nunito text-paragraph'>Ascending jagged peaks and sheer cliffs, climbing challenges adventurers to conquer nature`s heights, rewarding them with exhilarating views and a sense of triumph.</p>
                         <div className='flex grow justify-center items-stretch w-full'>
-                            <button className='btn bg-black text-white font-montserrat text-xl self-end mt-4'>Enquire</button>
+                            <button className='btn bg-black text-white font-montserrat md:text-lg lg:text-xl self-end mt-4'>Enquire</button>
                         </div>
                     </div>
-                    <div className='flex flex-col text-center w-64'>
-                        <img src={boating} alt="" className='w-64 h-[250px] rounded-full' />
-                        <h3 className='text-2xl mt-10 mb-5 font-montserrat font-semibold text-heading'>Boating</h3>
+                    <div className='flex flex-col justify-center items-center text-center md:w-64'>
+                        <img src={boating} alt="" className='w-48 h-48 md:w-64 md:h-[250px] rounded-full' />
+                        <h3 className='text-2xl mt-3 md:mt-5 lg:mt-8 mb-2 md:mb-5 font-montserrat font-semibold text-heading'>Boating</h3>
                         <p className='text-lg font-nunito text-paragraph'>Drifting along tranquil waters, boating offers a serene escape, where the rhythmic lapping of waves guides explorers to hidden coves and distant horizons.</p>
                         <div className='flex grow justify-center items-stretch w-full'>
-                            <button className='btn bg-black text-white font-montserrat text-xl self-end mt-4'>Enquire</button>
+                            <button className='btn bg-black text-white font-montserrat md:text-lg lg:text-xl self-end mt-4'>Enquire</button>
                         </div>
                     </div>
-                    <div className='flex flex-col text-center w-64'>
-                        <img src={hiking} alt="" className='w-64 h-[250px] rounded-full' />
-                        <h3 className='text-2xl mt-10 mb-5 font-montserrat font-semibold text-heading'>Hiking</h3>
+                    <div className='flex flex-col justify-center items-center text-center md:w-64'>
+                        <img src={hiking} alt="" className='w-48 h-48 md:w-64 md:h-[250px] rounded-full' />
+                        <h3 className='text-2xl mt-3 md:mt-5 lg:mt-8 mb-2 md:mb-5 font-montserrat font-semibold text-heading'>Hiking</h3>
                         <p className='text-lg font-nunito text-paragraph'>Step by step, amidst towering trees and rocky paths, hiking leads adventurers to breathtaking vistas and a deeper connection with the wilderness.</p>
                         <div className='flex grow justify-center items-stretch w-full'>
-                            <button className='btn bg-black text-white font-montserrat text-xl self-end mt-4'>Enquire</button>
+                            <button className='btn bg-black text-white font-montserrat md:text-lg lg:text-xl self-end mt-4'>Enquire</button>
                         </div>
                     </div>
                 </div>
             </div>
 
             {/* cart section */}
-            <div className='mt-[100px]'>
+            <div className='mt-10 md:mt-14 lg:mt-20 xl:mt-[100px]'>
                 <div>
-                    <h4 className='text-3xl font-pacifico font-semibold text-center text-heading mb-2'>Enjoy</h4>
-                    <h1 className='text-5xl font-montserrat font-extrabold text-center text-heading mb-8'>Our Popular Destinations</h1>
+                    <h4 className='text-xl md:text-2xl lg:text-3xl font-pacifico font-semibold text-center text-heading mb-2'>Enjoy</h4>
+                    <h1 className='text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-montserrat font-extrabold text-center text-heading mb-8'>Our Popular Destinations</h1>
                 </div>
                 <Carts></Carts>
             </div>
