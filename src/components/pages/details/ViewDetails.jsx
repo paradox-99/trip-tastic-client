@@ -4,7 +4,7 @@ const ViewDetails = () => {
 
     const data = useLoaderData();
 
-    const { annual_visitors, cost, country, description, email, name, photo_url, seasonality, spot_location, spot_name, travel_time } = data
+    const { annual_visitors, cost, country, description, email, name, photo_url, seasonality, spot_location, spot_name, travel_time } = data;
 
     return (
         <div className="mt-10 px-28">
@@ -22,7 +22,7 @@ const ViewDetails = () => {
                     <p className="text-xl font-nunito text-subHeading font-medium">Annual Visitors: {annual_visitors}</p>
                 </div>
                 <div className="space-y-2">
-                    <h1 className="text-3xl font-montserrat font-semibold">Provider</h1>
+                    <h1 className="text-3xl font-montserrat font-semibold">Provider-</h1>
                     <h3 className="text-xl font-montserrat font-semibold">{name}</h3>
                     <p className="text-lg font-nunito font-medium">{email}</p>
                 </div>

@@ -12,7 +12,7 @@ const Carts = () => {
     },[])
 
     return (
-        <div className="grid grid-cols-3 grid-rows-2 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 grid-rows-5 xl:grid-cols-3 xl:grid-rows-2 gap-6">
             {
                 spots.map(spot => <Cart
                 key={spot._id}

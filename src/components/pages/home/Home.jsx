@@ -24,7 +24,7 @@ const Home = () => {
                     centeredSlides={true}
                     autoplay={{
                         delay: 3000,
-                        disableOnInteraction: false,
+                        disableOnInteraction: true,
                     }}
                     pagination={{
                         clickable: true,
@@ -32,11 +32,46 @@ const Home = () => {
                     modules={[Autoplay, Pagination]}
                     className="mySwiper"
                 >
-                    <SwiperSlide><div className=''><img src={banner1} alt="" /></div></SwiperSlide>
-                    <SwiperSlide><div className=''><img src={banner2} alt="" /></div></SwiperSlide>
-                    <SwiperSlide><div className=''><img src={banner3} alt="" /></div></SwiperSlide>
-                    <SwiperSlide><div className=''><img src={banner4} alt="" /></div></SwiperSlide>
-                    <SwiperSlide><div className=''><img src={banner5} alt="" /></div></SwiperSlide>
+                    <SwiperSlide className='relative'>
+                        <div className='absolute flex flex-col top-[10%] md:top-[25%] xl:top-0 text-white xl:h-[600px] justify-center text-center items-center w-full'>
+                            <h3 className='font-pacifico md:text-2xl lg:text-3xl font-semibold  md:mb-3 lg:mb-5'>Explore the world</h3>
+                            <h1 className='text-2xl md:text-3xl lg:text-5xl font-montserrat font-bold'>Grand Canyon: Nature`s Majesty</h1>
+                            <p className='md:mt-4 lg:mt-8 text-sm md:text-xl lg:text-2xl font-nunito lg:w-[600px]'>Immerse Yourself in the Grandeur of the Grand Canyon - A Spectacular Wonder Carved by Time</p>
+                        </div>
+                        <img src={banner1} alt="" />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className='absolute flex flex-col md:left-4 lg:left-8 xl:left-16 top-[4%] md:top-[10%] lg:top-[15%] xl:top-0 text-heading xl:h-[600px] justify-center items-start w-full'>
+                            <h3 className='font-pacifico md:text-2xl lg:text-3xl font-semibold md:mb-3 lg:mb-5'>Explore the world</h3>
+                            <h1 className='text-2xl md:text-3xl lg:text-5xl font-montserrat font-bold'>Into the Wilderness- <br /> Explore, Discover, Adventure</h1>
+                            <p className='md:mt-4 lg:mt-8 text-sm md:text-xl lg:text-2xl font-nunito md:w-[550px] lg:w-[600px]'>Embark on a journey through the heart of nature. From lush forests to rugged trails, let every step bring you closer to the wonders of the wild.</p>
+                        </div>
+                        <img src={banner2} alt="" />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className='absolute flex flex-col md:top-[10%] lg:top-[15%] xl:top-0 text-white xl:h-[600px] justify-center items-center w-full text-center'>
+                            <h3 className='font-pacifico md:text-2xl lg:text-3xl font-semibold md:mb-3 lg:mb-5'>Explore the world</h3>
+                            <h1 className='text-2xl md:text-3xl lg:text-5xl font-montserrat font-bold'>Serenity Shores- Where Tranquility Meets the Sea</h1>
+                            <p className='md:mt-4 lg:mt-8 text-sm md:text-xl lg:text-2xl font-nunito md:w-[550px] lg:w-[600px]'>Escape to the tranquil embrace of Serenity Shores, where golden sands meet azure waters, and the gentle rhythm of the waves whispers tales of serenity and peace.</p>
+                        </div>
+                        <img src={banner3} alt="" />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className='absolute flex flex-col top-[5%] md:top-[18%] lg:top-[25%] xl:top-0 text-white xl:h-[600px] justify-center text-center items-center w-full'>
+                            <h3 className='font-pacifico md:text-2xl lg:text-3xl font-semibold md:mb-3 lg:mb-5'>Explore the world</h3>
+                            <h1 className='text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-montserrat font-bold'>Into the Wild- Exploring Nature`s Sanctuary</h1>
+                            <p className='md:mt-4 lg:mt-8 text-sm md:text-xl lg:text-2xl font-nunito md:w-[550px] lg:w-[600px]'>Embark on an Adventure Through Enchanted Forests. Discover Serenity, Discover Yourself.</p>
+                        </div>
+                        <img src={banner4} alt="" />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className='absolute flex flex-col top-[10%] md:top-[18%] lg:top-[25%] xl:top-0 text-white xl:h-[600px] justify-center items-center w-full '>
+                            <h3 className='font-pacifico md:text-2xl lg:text-3xl font-semibold md:mb-3 lg:mb-5'>Explore the world</h3>
+                            <h1 className='text-2xl md:text-3xl lg:text-5xl font-montserrat font-bold text-center'>Grand Canyon: Nature`s Majesty</h1>
+                            <p className='md:mt-4 lg:mt-8 text-sm md:text-xl lg:text-2xl font-nunito md:w-[550px] lg:w-[600px] text-white text-center'>Embark on an Adventure Through Enchanted Forests. Discover Serenity, Discover Yourself.</p>
+                        </div>
+                        <img src={banner5} alt="" />
+                    </SwiperSlide>
                 </Swiper>
             </div>
 
@@ -46,13 +81,13 @@ const Home = () => {
                     <h4 className='text-3xl font-pacifico font-semibold text-center text-heading mb-2'>Enjoy</h4>
                     <h1 className='text-5xl font-montserrat font-extrabold text-center text-heading mb-8'>Adventures Travels</h1>
                 </div>
-                <div className='flex justify-center gap-20'>
+                <div className='flex flex-wrap justify-center gap-20'>
                     <div className='flex flex-col text-center w-64'>
                         <img src={forest} alt="" className='w-64 h-[250px] rounded-full' />
                         <h3 className='text-2xl mt-10 mb-5 font-montserrat font-semibold text-heading'>Forest Travel</h3>
                         <p className='text-lg font-nunito text-paragraph'>Through dense woods, where sunlight filters through the canopy, forest travel unveils nature`s hidden treasures, inviting exploration and serenity.</p>
                         <div className='flex grow justify-center items-stretch w-full'>
-                            <button className='btn bg-btnPrimary font-montserrat text-xl self-end mt-4'>Enquire</button>
+                            <button className='btn bg-black text-white font-montserrat text-xl self-end mt-4'>Enquire</button>
                         </div>
                     </div>
                     <div className='flex flex-col text-center w-64'>
@@ -60,7 +95,7 @@ const Home = () => {
                         <h3 className='text-2xl mt-10 mb-5 font-montserrat font-semibold text-heading'>Climbing</h3>
                         <p className='text-lg font-nunito text-paragraph'>Ascending jagged peaks and sheer cliffs, climbing challenges adventurers to conquer nature`s heights, rewarding them with exhilarating views and a sense of triumph.</p>
                         <div className='flex grow justify-center items-stretch w-full'>
-                            <button className='btn bg-btnPrimary font-montserrat text-xl self-end mt-4'>Enquire</button>
+                            <button className='btn bg-black text-white font-montserrat text-xl self-end mt-4'>Enquire</button>
                         </div>
                     </div>
                     <div className='flex flex-col text-center w-64'>
@@ -68,7 +103,7 @@ const Home = () => {
                         <h3 className='text-2xl mt-10 mb-5 font-montserrat font-semibold text-heading'>Boating</h3>
                         <p className='text-lg font-nunito text-paragraph'>Drifting along tranquil waters, boating offers a serene escape, where the rhythmic lapping of waves guides explorers to hidden coves and distant horizons.</p>
                         <div className='flex grow justify-center items-stretch w-full'>
-                            <button className='btn bg-btnPrimary font-montserrat text-xl self-end mt-4'>Enquire</button>
+                            <button className='btn bg-black text-white font-montserrat text-xl self-end mt-4'>Enquire</button>
                         </div>
                     </div>
                     <div className='flex flex-col text-center w-64'>
@@ -76,11 +111,12 @@ const Home = () => {
                         <h3 className='text-2xl mt-10 mb-5 font-montserrat font-semibold text-heading'>Hiking</h3>
                         <p className='text-lg font-nunito text-paragraph'>Step by step, amidst towering trees and rocky paths, hiking leads adventurers to breathtaking vistas and a deeper connection with the wilderness.</p>
                         <div className='flex grow justify-center items-stretch w-full'>
-                            <button className='btn bg-btnPrimary font-montserrat text-xl self-end mt-4'>Enquire</button>
+                            <button className='btn bg-black text-white font-montserrat text-xl self-end mt-4'>Enquire</button>
                         </div>
                     </div>
                 </div>
             </div>
+
             {/* cart section */}
             <div className='mt-[100px]'>
                 <div>
