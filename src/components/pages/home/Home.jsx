@@ -24,7 +24,7 @@ const Home = () => {
                     centeredSlides={true}
                     autoplay={{
                         delay: 3000,
-                        disableOnInteraction: true,
+                        disableOnInteraction: false,
                     }}
                     pagination={{
                         clickable: true,
@@ -32,13 +32,15 @@ const Home = () => {
                     modules={[Autoplay, Pagination]}
                     className="mySwiper"
                 >
-                    <SwiperSlide className='relative'>
+                    <SwiperSlide className=''>
                         <div className='absolute flex flex-col top-[10%] md:top-[25%] xl:top-0 text-white xl:h-[600px] justify-center text-center items-center w-full'>
                             <h3 className='font-pacifico md:text-2xl lg:text-3xl font-semibold  md:mb-3 lg:mb-5'>Explore the world</h3>
                             <h1 className='text-2xl md:text-3xl lg:text-5xl font-montserrat font-bold'>Grand Canyon: Nature`s Majesty</h1>
                             <p className='md:mt-4 lg:mt-8 text-sm md:text-xl lg:text-2xl font-nunito lg:w-[600px]'>Immerse Yourself in the Grandeur of the Grand Canyon - A Spectacular Wonder Carved by Time</p>
                         </div>
-                        <img src={banner1} alt="" />
+                        <div className='flex justify-center'>
+                            <img src={banner1} alt="" />
+                        </div>
                     </SwiperSlide>
                     <SwiperSlide>
                         <div className='absolute flex flex-col md:left-4 lg:left-8 xl:left-16 top-[4%] md:top-[10%] lg:top-[15%] xl:top-0 text-heading xl:h-[600px] justify-center items-start w-full'>
@@ -46,7 +48,9 @@ const Home = () => {
                             <h1 className='text-2xl md:text-3xl lg:text-5xl font-montserrat font-bold'>Into the Wilderness- <br /> Explore, Discover, Adventure</h1>
                             <p className='md:mt-4 lg:mt-8 text-sm md:text-xl lg:text-2xl font-nunito md:w-[550px] lg:w-[600px]'>Embark on a journey through the heart of nature. From lush forests to rugged trails, let every step bring you closer to the wonders of the wild.</p>
                         </div>
-                        <img src={banner2} alt="" />
+                        <div className='flex justify-center'>
+                            <img src={banner2} alt="" />
+                        </div>
                     </SwiperSlide>
                     <SwiperSlide>
                         <div className='absolute flex flex-col md:top-[10%] lg:top-[15%] xl:top-0 text-white xl:h-[600px] justify-center items-center w-full text-center'>
@@ -54,7 +58,9 @@ const Home = () => {
                             <h1 className='text-2xl md:text-3xl lg:text-5xl font-montserrat font-bold'>Serenity Shores- Where Tranquility Meets the Sea</h1>
                             <p className='md:mt-4 lg:mt-8 text-sm md:text-xl lg:text-2xl font-nunito md:w-[550px] lg:w-[600px]'>Escape to the tranquil embrace of Serenity Shores, where golden sands meet azure waters, and the gentle rhythm of the waves whispers tales of serenity and peace.</p>
                         </div>
-                        <img src={banner3} alt="" />
+                        <div className='flex justify-center'>
+                            <img src={banner3} alt="" />
+                        </div>
                     </SwiperSlide>
                     <SwiperSlide>
                         <div className='absolute flex flex-col top-[5%] md:top-[18%] lg:top-[25%] xl:top-0 text-white xl:h-[600px] justify-center text-center items-center w-full'>
@@ -62,7 +68,9 @@ const Home = () => {
                             <h1 className='text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-montserrat font-bold'>Into the Wild- Exploring Nature`s Sanctuary</h1>
                             <p className='md:mt-4 lg:mt-8 text-sm md:text-xl lg:text-2xl font-nunito md:w-[550px] lg:w-[600px]'>Embark on an Adventure Through Enchanted Forests. Discover Serenity, Discover Yourself.</p>
                         </div>
-                        <img src={banner4} alt="" />
+                        <div className='flex justify-center'>
+                            <img src={banner4} alt="" />
+                        </div>
                     </SwiperSlide>
                     <SwiperSlide>
                         <div className='absolute flex flex-col top-[10%] md:top-[18%] lg:top-[25%] xl:top-0 text-white xl:h-[600px] justify-center items-center w-full '>

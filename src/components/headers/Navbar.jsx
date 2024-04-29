@@ -23,7 +23,7 @@ const Navbar = () => {
 
     return (
         <div>
-            <div className="bg-[#64F790] px-4 md:px-6 lg:px-10 py-1 lg:text-xl font-nunito flex justify-between text-paragraph">
+            <div className="bg-[#64F790] px-4 md:px-6 lg:px-10 py-2 lg:text-xl font-nunito flex justify-between text-paragraph">
                 <div className="flex gap-5 md:gap-10">
                     <div className="flex gap-2 items-center">
                         <TfiHeadphoneAlt />
@@ -42,8 +42,8 @@ const Navbar = () => {
                 </div>
             </div>
             <div className="navbar px-2 md:px-4 xl:px-28 font-montserrat z-10 sticky top-0">
-                <div className="dropdown dropdown-start navbar-start lg:hidden">
-                    <div tabIndex={0} role="button" className="btn btn-ghost pl-1 lg:hidden text-2xl">
+                <div className="dropdown dropdown-start navbar-start w-[30%] md:w-1/2 lg:hidden">
+                    <div tabIndex={0} role="button" className="btn btn-ghost px-1 lg:hidden text-2xl">
                         <HiMenuAlt2 />
                     </div>
                     <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-10 p-2 shadow bg-base-100 rounded-box w-52 font-medium lg:text-lg">
@@ -61,7 +61,7 @@ const Navbar = () => {
                         user && <img src={user.photoURL} alt="" className="hidden lg:flex mr-1 md:mr-3 w-12 h-12 rounded-full" data-tooltip-id="my-tooltip" data-tooltip-content={user.displayName} />
                     }
                     {
-                        user && <button onClick={logOut} className="btn bg-inherit border-none shadow-none hover:bg-[#16DB65] text-lg">Sign out</button>
+                        user && <button onClick={logOut} className="btn bg-inherit px-0 md:px-4 border-none shadow-none hover:bg-[#16DB65] text-lg">Sign out</button>
                     }
                     {
                         !user && <NavLink to={'/sign-in'} className="btn bg-inherit border-none shadow-none hover:bg-[#16DB65] lg:font-semibold xl:font-medium xl:text-lg hidden lg:flex">Sign in</NavLink>

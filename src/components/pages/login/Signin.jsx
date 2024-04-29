@@ -49,6 +49,7 @@ const Signin = () => {
     const googleLogin = () => {
         handleGoogleLogin()
             .then(res => {
+                console.log("sign: ",res.user);
                 if (res.user){
                     handleUserInDatabase(res.user, "Google")
                     handleAlert();

@@ -8,11 +8,14 @@ import AddSpots from "./components/pages/addSpots/AddSpots";
 import MyList from "./components/pages/myList/MyList";
 import PrivateRoute from "./private/PrivateRoute";
 import ViewDetails from "./components/pages/details/ViewDetails";
+import ErrorPage from "./ErrorPage";
+import Update from "./components/pages/update/Update";
 
 const Routes = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -29,7 +32,7 @@ const Routes = createBrowserRouter([
       },
       {
         path: "/my-list",
-        element: <MyList></MyList>,
+        element: <PrivateRoute><MyList></MyList></PrivateRoute>,
       },
       {
         path: '/sign-in',
@@ -43,6 +46,11 @@ const Routes = createBrowserRouter([
         path: '/view-details/:id',
         loader: ({ params }) => fetch(`http://localhost:3000/spots/${params.id}`),
         element: <PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>
+      },
+      {
+        path: '/update/:id',
+        loader: ({ params }) => fetch(`http://localhost:3000/spots/${params.id}`),
+        element: <PrivateRoute><Update></Update></PrivateRoute>
       }
     ],
   },

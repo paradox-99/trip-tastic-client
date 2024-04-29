@@ -7,8 +7,8 @@ const Spot = ({ spot }) => {
 
     return (
         <div>
-            <div className="card card-compact max-w-96 h-full bg-white rounded-t-none rounded-b-lg">
-                <figure><img src={photo_url} alt="Shoes" className='h-80' /></figure>
+            <div className="card card-compact max-w-[450px] h-full bg-white rounded-t-none rounded-b-lg">
+                <figure><img src={photo_url} alt={spot_name} className='h-80' /></figure>
                 <div className="card-body font-nunito">
                     <h1 className="card-title text-2xl font-montserrat">{spot_name}</h1>
                     <p className='text-lg'>Average cost:  ${cost}</p>
