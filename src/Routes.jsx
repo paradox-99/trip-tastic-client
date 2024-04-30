@@ -10,6 +10,7 @@ import PrivateRoute from "./private/PrivateRoute";
 import ViewDetails from "./components/pages/details/ViewDetails";
 import ErrorPage from "./ErrorPage";
 import Update from "./components/pages/update/Update";
+import CountrySpot from "./components/pages/country-spot/CountrySpot";
 
 const Routes = createBrowserRouter([
   {
@@ -19,6 +20,7 @@ const Routes = createBrowserRouter([
     children: [
       {
         path: "/",
+        loader: () => fetch('https://trip-tastic-server.vercel.app/countries'),
         element: <Home></Home>,
       },
       {
@@ -51,6 +53,11 @@ const Routes = createBrowserRouter([
         path: '/update/:id',
         loader: ({ params }) => fetch(`https://trip-tastic-server.vercel.app/spots/${params.id}`),
         element: <PrivateRoute><Update></Update></PrivateRoute>
+      },
+      {
+        path: 'country-details/:name',
+        loader: ({params}) => fetch(`https://trip-tastic-server.vercel.app/countries/${params.name}`),
+        element: <CountrySpot></CountrySpot>
       }
     ],
   },

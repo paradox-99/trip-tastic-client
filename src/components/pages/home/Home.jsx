@@ -13,8 +13,13 @@ import climb from '../../../assets/images/362.jpg'
 import boating from '../../../assets/images/41277.jpg'
 import hiking from '../../../assets/images/2150562965.jpg'
 import Carts from '../../cart/Carts';
+import { Link, useLoaderData } from 'react-router-dom';
 
 const Home = () => {
+
+    const countries = useLoaderData()
+    console.log(countries);
+
     return (
         <div>
             {/* banner */}
@@ -30,7 +35,6 @@ const Home = () => {
                         clickable: true,
                     }}
                     modules={[Autoplay, Pagination]}
-                    className="mySwiper"
                 >
                     <SwiperSlide className=''>
                         <div className='absolute flex flex-col top-[10%] md:top-[25%] xl:top-0 text-white xl:h-[600px] justify-center text-center items-center w-full'>
@@ -122,6 +126,53 @@ const Home = () => {
                             <button className='btn bg-black text-white font-montserrat md:text-lg lg:text-xl self-end mt-4'>Enquire</button>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            {/* countries section */}
+            <div className='mt-10 md:mt-14 lg:mt-20 xl:mt-[100px]'>
+                <div>
+                    <Swiper
+                        watchSlidesProgress={true}
+                        breakpoints={{
+                            640: {
+                                slidesPerView: 2,
+                            },
+                            768: {
+                                slidesPerView: 3,
+                                spaceBetween: 5
+                            },
+                            1024: {
+                                slidesPerView: 4,
+                                spaceBetween: 10
+                            },
+                        }}
+                        autoplay={{
+                            delay: 3000,
+                            disableOnInteraction: true,
+                        }}
+                        modules={[Autoplay]}
+                        className="mySwiper">
+                        <SwiperSlide >
+                            <div className='flex flex-col justify-center items-center h-[487px] bg-white'>
+                                    <h4 className='text-xl md:text-2xl lg:text-3xl font-pacifico font-semibold text-center text-heading mb-2'>Explore and Enjoy <br />the beauty of</h4>
+                                    <h1 className='text-2xl md:text-3xl lg:text-4xl xl:text-6xl font-montserrat font-extrabold text-center text-heading mb-8'>America</h1>
+                            </div>
+                        </SwiperSlide>
+                        {
+                            countries.map(country => <SwiperSlide key={country._id}>
+                                <div className="card card-compact w-[370px] rounded-none h-full bg-white">
+                                    <Link to={`/country-details/${country.name}`}>
+                                        <figure><img src={country.image} alt="Shoes" className='h-[300px]' /></figure>
+                                        <div className="card-body">
+                                            <h2 className="card-title font-montserrat text-heading">{country.name}</h2>
+                                            <p className='font-nunito text-base text-justify h-[115px] text-subHeading line-clamp-5'>{country.description}</p>
+                                        </div>
+                                    </Link>
+                                </div>
+                            </SwiperSlide>)
+                        }
+                    </Swiper>
                 </div>
             </div>
 
