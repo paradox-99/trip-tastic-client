@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../provider/AuthProv";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const MyList = () => {
 
@@ -10,24 +11,51 @@ const MyList = () => {
     const [spots, setSpots] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:3000/find-spots/${displayName}`)
+        fetch(`https://trip-tastic-server.vercel.app/find-spots/${displayName}`)
             .then(res => res.json())
             .then(data => setSpots(data))
     }, [])
 
     const handleDelete = (id) => {
-        fetch(`http://localhost:3000/spot-delete/${id}`, {
-            method: 'delete'
-        })
-        .then(res => res.json())
-        .then(data => console.log(data))
-        const remaining = spots.filter(spot => spot._id !== id);
-        setSpots(remaining);
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`https://trip-tastic-server.vercel.app/spot-delete/${id}`, {
+                    method: 'delete'
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.deletedCount === 1) {
+                            const remaining = spots.filter(spot => spot._id !== id);
+                            setSpots(remaining);
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: "Your file has been deleted.",
+                                icon: "success"
+                            });
+                        }
+                        else{
+                            Swal.fire({
+                                title: "Failed!",
+                                text: "Something happened wrong. Unable to delete.",
+                                icon: "error"
+                            });
+                        }
+                    })
+            }
+        });
     }
 
     return (
         <div>
-            <div className="overflow-x-auto px-28 mt-10 md:mt-14 lg:mt-20 xl:mt-[100px]">
+            <div className="overflow-x-auto lg:px-28 mt-10 md:mt-14 lg:mt-20 xl:mt-[100px]">
                 <table className="table">
                     {/* head */}
                     <thead>
@@ -49,7 +77,7 @@ const MyList = () => {
                                 <th>{spot.spot_location}</th>
                                 <th>{spot.cost}</th>
                                 <th>{spot.seasonality}</th>
-                                <th><Link to={`/update/${spot._id}`} className="btn bg-textGreen mr-4" >Update</Link><button className="btn bg-textGreen" onClick={() => handleDelete(spot._id)}>Delete</button></th>
+                                <th><Link to={`/update/${spot._id}`} className="btn w-full md:w-auto bg-textGreen mr-4" >Update</Link><button className="btn w-full md:w-auto bg-textGreen" onClick={() => handleDelete(spot._id)}>Delete</button></th>
                             </tr>)
                         }
                     </tbody>

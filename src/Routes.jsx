@@ -23,7 +23,7 @@ const Routes = createBrowserRouter([
       },
       {
         path: "/all-spots",
-        loader: () => fetch('http://localhost:3000/spots'),
+        loader: () => fetch('https://trip-tastic-server.vercel.app/spots'),
         element: <AllSpots></AllSpots>,
       },
       {
@@ -44,12 +44,12 @@ const Routes = createBrowserRouter([
       },
       {
         path: '/view-details/:id',
-        loader: ({ params }) => fetch(`http://localhost:3000/spots/${params.id}`),
+        loader: ({ params }) => fetch(`https://trip-tastic-server.vercel.app/spots/${params.id}`),
         element: <PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>
       },
       {
         path: '/update/:id',
-        loader: ({ params }) => fetch(`http://localhost:3000/spots/${params.id}`),
+        loader: ({ params }) => fetch(`https://trip-tastic-server.vercel.app/spots/${params.id}`),
         element: <PrivateRoute><Update></Update></PrivateRoute>
       }
     ],

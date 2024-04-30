@@ -70,7 +70,7 @@ const Navbar = () => {
                         !user && <NavLink to={'/sign-up'} className="btn bg-inherit border-none shadow-none hover:bg-[#16DB65] lg:font-semibold xl:font-medium xl:text-lg hidden lg:flex">Sign up</NavLink>
                     }
                     {
-                        !user && <NavLink to={'/sign-up'} className="btn p-1 bg-inherit border-none shadow-none hover:bg-[#16DB65] text-2xl lg:hidden" data-tooltip-id="my-tooltip" data-tooltip-content={"Sign in"}><IoLogInOutline /></NavLink>
+                        !user && <NavLink to={'/sign-in'} className="btn p-1 bg-inherit border-none shadow-none hover:bg-[#16DB65] text-2xl lg:hidden" data-tooltip-id="my-tooltip" data-tooltip-content={"Sign in"}><IoLogInOutline /></NavLink>
                     }
                     <div className="dropdown dropdown-end">
                         {/* <div tabIndex={0} role="button" className="btn px-0 btn-ghost lg:hidden">

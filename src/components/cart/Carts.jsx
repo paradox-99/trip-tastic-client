@@ -6,7 +6,7 @@ const Carts = () => {
     const [spots, setSpots] = useState([]);
 
     useEffect(()=>{
-        fetch('http://localhost:3000/spots')
+        fetch('https://trip-tastic-server.vercel.app/spots')
         .then(res => res.json())
         .then(spots => setSpots(spots))
     },[])

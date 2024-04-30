@@ -49,12 +49,21 @@ const Signin = () => {
     const googleLogin = () => {
         handleGoogleLogin()
             .then(res => {
-                console.log("sign: ",res.user);
-                if (res.user){
+                console.log("sign: ", res.user);
+                if (res.user) {
                     handleUserInDatabase(res.user, "Google")
-                    handleAlert();
+                    Swal.fire({
+                        text: 'Login successful',
+                        icon: 'success',
+                        confirmButtonText: 'OK'
+                    })
+                        .then(result => {
+                            if (result.isConfirmed) {
+                                console.log(result.isConfirmed)
+                                navigate(location?.state ? location.state : '/')
+                            }
+                        });
                 }
-                navigate(location?.state ? location.state : '/')
             })
             .catch((error) => { setError(error.message) });
     }
@@ -62,7 +71,7 @@ const Signin = () => {
     const gitHubLogin = () => {
         handleGitHubLogin()
             .then(res => {
-                if (res.user){
+                if (res.user) {
                     handleUserInDatabase(res.user, "GitHub")
                     handleAlert();
                 }
@@ -75,7 +84,7 @@ const Signin = () => {
         handleFacebookLogin()
             .then(res => {
                 console.log(res.user)
-                if (res.user){
+                if (res.user) {
                     handleUserInDatabase(res.user, "Facebook");
                     handleAlert();
                 }
@@ -85,11 +94,7 @@ const Signin = () => {
     }
 
     const showSweetAlert = () => {
-        return Swal.fire({
-            text: 'Login successful',
-            icon: 'success',
-            confirmButtonText: 'OK'
-        })
+
     }
 
     const handleAlert = async () => {
@@ -97,7 +102,7 @@ const Signin = () => {
     };
 
     const handleUserInDatabase = (user, loginMethod) => {
-        fetch(`http://localhost:3000/findUser/${user.uid}`)
+        fetch(`https://trip-tastic-server.vercel.app/findUser/${user.uid}`)
             .then(result => result.json())
             .then(datas => {
                 if (datas === false) {
@@ -113,7 +118,7 @@ const Signin = () => {
                         lastSignInTime: user.metadata.lastSignInTime,
                         loginMethod: loginMethod
                     }
-                    fetch('http://localhost:3000/users', {
+                    fetch('https://trip-tastic-server.vercel.app/users', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
@@ -129,7 +134,7 @@ const Signin = () => {
                     const updateData = {
                         lastSignInTime: user.metadata.lastSignInTime
                     }
-                    fetch(`http://localhost:3000/updateUser/${user.uid}`, {
+                    fetch(`https://trip-tastic-server.vercel.app/updateUser/${user.uid}`, {
                         method: 'PUT',
                         headers: {
                             'Content-Type': 'application/json'
