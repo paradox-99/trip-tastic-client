@@ -6,12 +6,12 @@ import Swal from "sweetalert2";
 const MyList = () => {
 
     const { user } = useContext(AuthContext);
-    const { displayName } = user;
+    const { uid } = user;
 
     const [spots, setSpots] = useState([]);
 
     useEffect(() => {
-        fetch(`https://trip-tastic-server.vercel.app/find-spots/${displayName}`)
+        fetch(`https://trip-tastic-server.vercel.app/find-spots/${uid}`)
             .then(res => res.json())
             .then(data => setSpots(data))
     }, [])

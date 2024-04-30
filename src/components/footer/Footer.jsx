@@ -45,7 +45,7 @@ const Footer = () => {
                 </footer>
                 <footer className="footer place-items-center lg:place-items-start px-5 lg:px-16 xl:px-28 py-6 border-t bg-[#020202] text-white border-base-300">
                     <Zoom>
-                        <aside className="items-center grid-flow-col">
+                        <aside className="flex items-center gap-3">
                             <FaSlackHash className="text-4xl" />
                             <p className="font-nunito text-lg md:text-xl">TripTastic Tour and travel Ltd. <br />Providing reliable tech since 2002</p>
                         </aside>

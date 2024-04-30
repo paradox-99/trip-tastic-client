@@ -114,7 +114,7 @@ const Home = () => {
                     </Zoom>
                 </div>
                 <div className='flex flex-wrap justify-center gap-10 md:gap-14 lg:gap-20 mx-3'>
-                    <Fade cascade fraction={0.5} damping={0.8} triggerOnce >
+                    <Fade cascade fraction={0.4} damping={0.8} triggerOnce >
                         <div className='flex flex-col justify-center items-center text-center md:w-64'>
                             <Zoom cascade >
                                 <img src={forest} alt="" className='w-48 md:w-64 md:h-[250px] rounded-full' />
@@ -182,7 +182,7 @@ const Home = () => {
                         modules={[Autoplay]}
                         className="mySwiper">
                         <SwiperSlide >
-                            <Fade cascade fraction={0.5} damping={0.5} >
+                            <Fade cascade fraction={0.3} damping={0.5} >
                                 <div className='flex flex-col justify-center items-center h-[407px] md:h-[487px] bg-white'>
                                     <h4 className='text-2xl lg:text-3xl font-pacifico font-semibold text-center text-heading mb-2'>Explore and Enjoy <br />the beauty of</h4>
                                     <h1 className='text-3xl lg:text-4xl xl:text-6xl font-montserrat font-extrabold text-center text-heading mb-8'>America</h1>
@@ -191,7 +191,7 @@ const Home = () => {
                         </SwiperSlide>
                         {
                             countries.map(country => <SwiperSlide key={country._id}>
-                                <Fade cascade fraction={0.5} damping={0.5}>
+                                <Fade cascade fraction={0.3} damping={0.5}>
                                     <div className="card card-compact md:w-[370px] rounded-none h-full bg-white">
                                         <Link to={`/country-details/${country.name}`}>
                                             <figure><img src={country.image} alt="Shoes" className='h-[220px] md:h-[300px] w-full' /></figure>
@@ -228,7 +228,7 @@ const Home = () => {
                         <h1 className='text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-montserrat font-extrabold text-center text-white mb-8'>Our Offer the Best</h1>
                     </Zoom>
                 </div>
-                <Fade fraction={0.5}>
+                <Fade fraction={0.3}>
                     <div className='flex flex-col gap-7 lg:gap-14  xl:gap-20 justify-center mt-10 items-center'>
                         <Zoom cascade>
                             <div className='flex gap-7 lg:gap-14 xl:gap-20 flex-col md:flex-row text-white text-2xl lg:text-3xl font-nunito'>

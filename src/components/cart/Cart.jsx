@@ -7,7 +7,7 @@ const Cart = ({ spot }) => {
     const { _id, spot_name, spot_location, cost, photo_url } = spot;
 
     return (
-        <Fade direction='up'>
+        <Fade direction='up' triggerOnce >
             <div className='relative font-montserrat'>
                 <img src={photo_url} alt="" className='lg:h-[550px]' />
                 <div className='absolute w-full h-[200px] md:h-[400px] bottom-0 bg-cartImage'>

@@ -6,9 +6,7 @@ const AddSpots = () => {
 
     const {user} = useContext(AuthContext);
     console.log(user);
-    const {email, displayName} = user;
-
-    console.log(user);
+    const {email, displayName, uid} = user;
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -24,8 +22,9 @@ const AddSpots = () => {
         const travel_time = form.travel_time.value;
         const annual_visitors = form.annual_visitors.value;
         const description = form.description.value;
+        const user_id = uid;
 
-        const data = { name, email, country, spot_name, spot_location, cost, photo_url, seasonality, travel_time, annual_visitors, description }
+        const data = { name, email, user_id, country, spot_name, spot_location, cost, photo_url, seasonality, travel_time, annual_visitors, description }
 
         fetch('https://trip-tastic-server.vercel.app/add-new-spot', {
             method: "POST",
