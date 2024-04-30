@@ -20,12 +20,16 @@ export default {
         'btnHover': '#23FF70'
       },
       backgroundImage: {
-        'form_bg': "url('./src/assets/images/form.png')",
-        'add-spot': "url('./src/assets/images/addSpot.png')",
+        'form_bg': "url('/form.png')",
+        'add-spot': "url('/addSpot.png')",
+        'extra-section': "linear-gradient(0deg, #150B2BE5, #150B2B00) ,url('/extra.jpg')",
         'cartImage': 'linear-gradient(to bottom,rgba(0,0,0,0) 0,rgba(0,0,0,0) 0,rgba(0,0,0,0.5) 50%,rgba(0,0,0,1) 100%)'
       }
     },
   },
   plugins: [require("daisyui")],
+  daisyui: {
+    themes: ['light', 'dark'],
+  },
 }
 
