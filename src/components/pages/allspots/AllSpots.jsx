@@ -11,7 +11,7 @@ const AllSpots = () => {
     }, [data])
 
     const handleSort = (value) => {
-        fetch(`https://trip-tastic-server.vercel.app/sort-by/${value}`)
+        fetch(`http://localhost:3000/sort-by/${value}`)
         .then(res => res.json())
         .then(data => setSpots(data))
     }

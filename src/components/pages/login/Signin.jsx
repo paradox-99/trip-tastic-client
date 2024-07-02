@@ -10,6 +10,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from 'zod';
 import { AuthContext } from "../../../provider/AuthProv";
 import Swal from 'sweetalert2';
+import axios from "axios";
 
 const schema = z.object({
     email: z.string().email(),
@@ -38,7 +39,15 @@ const Signin = () => {
                     handleUserInDatabase(res.user, "Email/password")
                     handleAlert();
                 }
-                navigate(location?.state ? location.state : '/')
+                const user = {uid: res.user.uid};
+                axios.post("http://localhost:3000/jwt", user, {withCredentials: true})
+                .then(res => {
+                    if(res.data.success)
+                        navigate(location?.state ? location.state : '/')
+
+                })
+                // http://localhost:3000/
+
             })
             .catch((error) => {
                 if (error.message === 'Firebase: Error (auth/invalid-credential).')
@@ -102,7 +111,7 @@ const Signin = () => {
     };
 
     const handleUserInDatabase = (user, loginMethod) => {
-        fetch(`https://trip-tastic-server.vercel.app/findUser/${user.uid}`)
+        fetch(`http://localhost:3000/findUser/${user.uid}`)
             .then(result => result.json())
             .then(datas => {
                 if (datas === false) {
@@ -118,7 +127,7 @@ const Signin = () => {
                         lastSignInTime: user.metadata.lastSignInTime,
                         loginMethod: loginMethod
                     }
-                    fetch('https://trip-tastic-server.vercel.app/users', {
+                    fetch('http://localhost:3000/users', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
@@ -134,7 +143,7 @@ const Signin = () => {
                     const updateData = {
                         lastSignInTime: user.metadata.lastSignInTime
                     }
-                    fetch(`https://trip-tastic-server.vercel.app/updateUser/${user.uid}`, {
+                    fetch(`http://localhost:3000/updateUser/${user.uid}`, {
                         method: 'PUT',
                         headers: {
                             'Content-Type': 'application/json'

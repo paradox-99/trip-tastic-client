@@ -1,11 +1,25 @@
-# TripTastic
-### Client Side
+# <a href="https://trip-tastic-32d55.web.app/">TripTastic</a>
+
+## Overview
+<p>
+    TripTastic is a tourism management website. Here you can view popular tourist spot of America and can book a tour package. 
+</p>
 
 ## Link-
--[Live-link (Client)](https://trip-tastic-32d55.web.app/)
--[Link (Server side)](https://trip-tastic-server.vercel.app/)
+-[Live-link ](https://trip-tastic-32d55.web.app/)
+<!-- -[Link (Server side)](http://localhost:3000/) -->
 
--[Link (Server side GitHub)](https://github.com/programming-hero-web-course-4/b9a10-server-side-paradox-99)
+<!-- -[Link (Server side GitHub)](https://github.com/programming-hero-web-course-4/b9a10-server-side-paradox-99) -->
+
+## Technology used-
+- React
+- Tailwind
+- Daisy UI
+- Firebase
+- Express JS
+- MongoDB
+- Node JS
+- Vercel
 
 
 ## Features-

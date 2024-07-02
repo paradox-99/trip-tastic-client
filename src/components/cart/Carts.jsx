@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import Cart from "./Cart";
+import axios from "axios";
 
 const Carts = () => {
 
     const [spots, setSpots] = useState([]);
 
     useEffect(()=>{
-        fetch('https://trip-tastic-server.vercel.app/spots-home')
-        .then(res => res.json())
-        .then(spots => setSpots(spots))
+        axios.get('http://localhost:3000/spots-home')
+        .then(spots => setSpots(spots.data))
     },[])
 
     return (

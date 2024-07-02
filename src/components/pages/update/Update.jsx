@@ -49,7 +49,7 @@ const Update = () => {
 
         const data = { name, email, country, spot_name, spot_location, cost, photo_url, seasonality, travel_time, annual_visitors, description }
 
-        fetch(`https://trip-tastic-server.vercel.app/updateSpot/${spots._id}`, {
+        fetch(`http://localhost:3000/updateSpot/${spots._id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json",

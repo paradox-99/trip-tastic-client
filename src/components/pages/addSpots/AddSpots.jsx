@@ -26,7 +26,7 @@ const AddSpots = () => {
 
         const data = { name, email, user_id, country, spot_name, spot_location, cost, photo_url, seasonality, travel_time, annual_visitors, description }
 
-        fetch('https://trip-tastic-server.vercel.app/add-new-spot', {
+        fetch('http://localhost:3000/add-new-spot', {
             method: "POST",
             headers: {
                 "content-type": "application/json",

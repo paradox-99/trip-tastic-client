@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../provider/AuthProv";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import axios from "axios";
 
 const MyList = () => {
 
@@ -10,11 +11,12 @@ const MyList = () => {
 
     const [spots, setSpots] = useState([]);
 
+    const url = `http://localhost:3000/find-spots/${uid}`
+
     useEffect(() => {
-        fetch(`https://trip-tastic-server.vercel.app/find-spots/${uid}`)
-            .then(res => res.json())
-            .then(data => setSpots(data))
-    }, [])
+        axios.get(url, {withCredentials: true})
+        .then(res => setSpots(res.data))
+    }, [url])
 
     const handleDelete = (id) => {
         Swal.fire({
@@ -27,7 +29,7 @@ const MyList = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://trip-tastic-server.vercel.app/spot-delete/${id}`, {
+                fetch(`http://localhost:3000/spot-delete/${id}`, {
                     method: 'delete'
                 })
                     .then(res => res.json())

@@ -20,12 +20,12 @@ const Routes = createBrowserRouter([
     children: [
       {
         path: "/",
-        loader: () => fetch('https://trip-tastic-server.vercel.app/countries'),
+        loader: () => fetch('http://localhost:3000/countries'),
         element: <Home></Home>,
       },
       {
         path: "/all-spots",
-        loader: () => fetch('https://trip-tastic-server.vercel.app/spots'),
+        loader: () => fetch('http://localhost:3000/spots'),
         element: <AllSpots></AllSpots>,
       },
       {
@@ -46,17 +46,17 @@ const Routes = createBrowserRouter([
       },
       {
         path: '/view-details/:id',
-        loader: ({ params }) => fetch(`https://trip-tastic-server.vercel.app/spots/${params.id}`),
+        loader: ({ params }) => fetch(`http://localhost:3000/spots/${params.id}`),
         element: <PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>
       },
       {
         path: '/update/:id',
-        loader: ({ params }) => fetch(`https://trip-tastic-server.vercel.app/spots/${params.id}`),
+        loader: ({ params }) => fetch(`http://localhost:3000/spots/${params.id}`),
         element: <PrivateRoute><Update></Update></PrivateRoute>
       },
       {
         path: 'country-details/:name',
-        loader: ({params}) => fetch(`https://trip-tastic-server.vercel.app/countries/${params.name}`),
+        loader: ({params}) => fetch(`http://localhost:3000/countries/${params.name}`),
         element: <CountrySpot></CountrySpot>
       }
     ],
