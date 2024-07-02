@@ -39,3 +39,9 @@ React tools:
 - react zod validation
 - react hook form
 
+### Run in Local
+<p> To run this project in your local system do- 
+<li>git fetch https://github.com/paradox-99/trip-tastic-client.git</li>
+<li>open folder</li>
+<li>in cmd run- npm install</li>
+</p>
